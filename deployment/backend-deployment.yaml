@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: 'backend-deployment'
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: oc-backend
+  template:
+    metadata:
+      labels:
+        component: oc-backend
+    spec:
+        containers:
+          - name: oc-be
+            image: franckabdullah/openculture-be:v2
+            ports:
+              - containerPort: 8080
+            env: 
+              - name: POSTGRES_HOST
+                value: pgsql-cluster-ip-service
+              - name: POSTGRES_PASSWORD
+                valueFrom: 
+                  secretKeyRef:
+                    name: pgsqlpassword
+                    key:  PGSQLPASSWORD
+            

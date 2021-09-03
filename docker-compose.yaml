@@ -6,7 +6,7 @@ networks:
 
 services:
   fe:
-    image: 'openculture-fe:latest'
+    image: 'franckabdullah/openculture-fe:v2'
     build:
       context: ./open-culture-front
     ports:
@@ -18,7 +18,7 @@ services:
     networks:
       - openculture
   be:
-    image: 'openculture-be:latest'
+    image: 'franckabdullah/openculture-be:v2'
     build:
       context: ./open-culture-backend
     ports:

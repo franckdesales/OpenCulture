@@ -37,9 +37,9 @@ spring:
       indent-output: true
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:postgresql://db:5432/postgres
+    url: jdbc:postgresql://pgsql-cluster-ip-service:5432/postgres
     username: postgres
-    password: 
+    password: Kuho7aje2K
     hikari:
       poolName: Hikari
       auto-commit: false
@@ -80,7 +80,7 @@ jhipster:
       max-entries: 100 # Number of objects in each cache entry
   # CORS is only enabled by default with the "dev" profile, so BrowserSync can access the API
   cors:
-    allowed-origins: 'http://localhost,http://fe'
+    allowed-origins: '*'
     allowed-methods: '*'
     allowed-headers: '*'
     exposed-headers: 'Authorization,Link,X-Total-Count'

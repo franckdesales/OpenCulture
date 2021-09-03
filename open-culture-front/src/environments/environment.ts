@@ -4,7 +4,7 @@
 
 export const environment = {
     production: false,
-    apiUrl : 'http://be:8080/api/'
+    apiUrl : 'http://backend-cluster-ip:8080/api/'
 };
 /*
  * For easier debugging in development mode, you can import the following file

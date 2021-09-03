@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: oc-frontend
+  template:
+    metadata:
+      labels:
+        component: oc-frontend
+    spec:
+      containers:
+        - name: oc-fe
+          image: franckabdullah/openculture-fe:v3
+          ports:
+            - containerPort: 4200

@@ -1,11 +1,11 @@
 ### STAGE 1: Build ###
-FROM node:12.7-alpine AS build
+FROM node:latest AS build
 WORKDIR /usr/src/app
 COPY package.json package-lock.json ./
 RUN npm install
 COPY . .
 RUN npm run build
 ### STAGE 2: Run ###
-FROM nginx:1.17.1-alpine
+FROM nginx:latest
 COPY --from=build /usr/src/app/nginx.conf /etc/nginx/nginx.conf 
 COPY --from=build /usr/src/app/dist/gloz-ng /usr/share/nginx/html

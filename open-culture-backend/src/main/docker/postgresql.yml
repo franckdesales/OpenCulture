@@ -5,7 +5,7 @@ services:
     # volumes:
     #     - ~/volumes/jhipster/openculture/postgresql/:/var/lib/postgresql/data/
     environment:
-      - POSTGRES_USER=openculture
+      - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=
       - POSTGRES_HOST_AUTH_METHOD=trust
     ports:
